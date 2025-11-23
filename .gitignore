@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+.env
+.venv/
+venv/
+
+# Spark / Hadoop output
+test_data/clean/
+test_data/tmp/
+*.crc
+*_SUCCESS
+*.log
+
+# Raw big datasets (keep only small samples if needed)
+data/raw/**
+
+# Idea / VSCode / OS cruft
+.idea/
+.vscode/
+*.iml
+.DS_Store
+Thumbs.db
+
+# Logs & checkpoints
+logs/
+spark-warehouse/
+metastore_db/
+checkpoint/
