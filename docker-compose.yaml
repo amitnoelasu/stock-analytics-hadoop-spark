@@ -1,0 +1,13 @@
+services:
+  etl:
+    build: .
+    container_name: spark_etl
+    volumes:
+      - ./test_data:/app/test_data   # mounts local ./test_data into /app/test_data in container
+    command: [
+      "python3",
+      "/app/scripts/run_etl.py",
+      "--prices-path", "/app/test_data/raw/stocks",
+      "--metadata-path", "/app/test_data/raw/meta/symbols_valid_meta.csv",
+      "--output-path", "/app/test_data/clean/prices_test"
+    ]
