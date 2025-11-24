@@ -37,31 +37,49 @@ After ETL, Spark runs demonstration SQL queries for exploration.
 
 ## 📂 Project Structure
 
-etl/
-│
-├── extract/
-│   ├── prices_loader.py
-│   └── metadata_loader.py
-│
-├── transform/
-│   ├── indicators.py       # returns, MA20, MA50, volatility
-│   ├── joiner.py           # join w/ metadata
-│   └── enrich.py           # orchestrates transformations
-│
-├── load/
-│   └── writer.py           # writes Parquet (local or HDFS)
-│
-├── analysis/
-│   └── sql_examples.py     # exploratory SQL queries
-│
-├── spark_app.py            # SparkSession builder
-├── config.py               # CLI + runtime config
-└── pipeline.py             # Full ETL pipeline orchestration
-
-run_etl.py                  # Entrypoint
-Dockerfile
-docker-compose.yml
-
+└── 📁etl
+        └── 📁extract
+            ├── __init__.py
+            ├── metadata_loader.py
+            ├── prices_loader.py
+        └── 📁load
+            ├── __init__.py
+            ├── writer.py
+        └── 📁sql
+            ├── query_parquet.py
+        └── 📁transform
+            ├── __init__.py
+            ├── enrich.py
+            ├── prices_transform.py
+        ├── __init__.py
+        ├── cli.py
+        ├── config.py
+        ├── pipeline.py
+        ├── spark_app.py
+    └── 📁notebooks
+    └── 📁test_data
+        └── 📁clean
+            └── 📁prices_test (generated folder)
+                └── 📁symbol=A
+                    ├── .part-00000-c4021f04-770f-49c0-83eb-5fe7eac4da81.c000.snappy.parquet.crc
+                    ├── part-00000-c4021f04-770f-49c0-83eb-5fe7eac4da81.c000.snappy.parquet
+                    ....
+        └── 📁raw
+            └── 📁meta
+                ├── symbols_valid_meta.csv
+            └── 📁stocks
+                ├── A.csv
+                ├── AA.csv
+                ├── AACG.csv
+                ├── AAL.csv
+                ├── AAMC.csv
+    ├── .dockerignore
+    ├── .gitignore
+    ├── docker-compose.yaml
+    ├── Dockerfile
+    ├── README.md
+    ├── requirements.txt
+    └── run_etl.py # Entrypoint
 
 
 ### Input data format
