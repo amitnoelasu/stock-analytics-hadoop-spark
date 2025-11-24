@@ -36,6 +36,7 @@ After ETL, Spark runs demonstration SQL queries for exploration.
 ---
 
 ## 📂 Project Structure
+```
 
 └── 📁etl
         └── 📁extract
@@ -80,6 +81,7 @@ After ETL, Spark runs demonstration SQL queries for exploration.
     ├── README.md
     ├── requirements.txt
     └── run_etl.py # Entrypoint
+```
 
 
 ### Input data format
