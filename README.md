@@ -4,7 +4,7 @@ A modular, production-style **PySpark ETL pipeline** that ingests raw stock pric
 
 The project is fully containerized using Docker and includes optional integration with **HDFS and Hive** for distributed storage/queries.
 
-# Data source: https://www.kaggle.com/datasets/jacksoncrow/stock-market-dataset?resource=download
+Data source: https://www.kaggle.com/datasets/jacksoncrow/stock-market-dataset?resource=download
 
 ---
 
@@ -64,21 +64,21 @@ docker-compose.yml
 
 
 
-# Input data format
+### Input data format
 Date,Open,High,Low,Close,Adj Close,Volume
 2024-01-02,189.98,190.85,187.20,189.00,189.00,45000000
 
-# Metadata CSV example
+### Metadata CSV example
 Symbol,Security Name,Listing Exchange,Market Category,ETF,...
 AAPL,Apple Inc,Nasdaq Global Select,Q,...
 
-# Output format (Parquet)
+### Output format (Parquet)
 prices_enriched/
 └── symbol=AAPL/
       part-xxxxx.snappy.parquet
 └── symbol=AMZN/
 └── symbol=MSFT/
 
-# Output path for test-data: /test_data/clean
+### Output path for test-data: /test_data/clean
 
 
