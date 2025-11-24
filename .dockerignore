@@ -1,0 +1,35 @@
+# Ignore large local datasets
+data/
+test_data/
+notebooks/
+diagrams/
+
+# Python caches
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environments
+.env
+.venv/
+venv/
+
+# Logs
+*.log
+logs/
+
+# Spark / Hadoop runtime junk
+spark-warehouse/
+metastore_db/
+checkpoint/
+derby.log
+
+# OS / Editor noise
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Docker files normally copied accidentally
+docker-compose.override.yml

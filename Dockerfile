@@ -8,6 +8,6 @@ RUN pip install --no-cache-dir -r /tmp/requirements.txt
 
 # Copy only code, NOT raw data
 WORKDIR /app
-COPY scripts/ /app/scripts/
+COPY . /app
 
 
